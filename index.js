@@ -40,8 +40,12 @@ function round(player, computer) {
 }
 
 
-console.log(player, computer);
-console.log(game(player, computer));
-
-
+for(let i = 1; i <= 5; i++) {
+    console.log(`Round ${i}:`);
+    console.log(`Player: ${player}`);
+    console.log(`Computer: ${computer}`);
+    console.log(round(player, computer));
+    computer = computerChoice();
+    player = prompt("Select One: Rock, Paper, Scissors").toLowerCase();
+}
 
