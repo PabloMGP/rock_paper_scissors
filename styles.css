@@ -1,0 +1,25 @@
+* {
+    border: solid 3px red;
+}
+
+body {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.intro-container {
+    display: flex;
+    justify-content: center;
+}
+
+.rps-container {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+
