@@ -11,45 +11,58 @@
 
 <body>
 
- 
+
     <div class="container">
 
-<div class="intro_container">
-    <h1>Rock, Paper, Scissors</h1>
-</div>
-
-<div class="game_container">
-        <div class="rps_container">
-            <button class="rock"><img src="rock.png"></button>
-            <button class="paper"><img src="paper.png"></button>
-            <button class="scissors"><img src="scissors.png"></button>
+        <div class="intro_container">
+            <h1>Rock, Paper, Scissors</h1>
         </div>
 
-        <div class="game_info">
-            <p class="score_info"></p>
+        <!-- <div class="game_container"> -->
+
+            <div class="round_count_container">
+               <p>Round</p>
+                <button class="round_count">0</button>
+            </div>
+
+            <div class="rps_container">
+                <button class="rock"><img src="./images/rock.png"></button>
+                <button class="paper"><img src="./images/paper.png"></button>
+                <button class="scissors"><img src="./images/scissors.png"></button>
+            </div>
+
+            <div class="game_info">
+                <p class="score_title"></p>
+                <p class="score_info"></p>
+            </div>
+
+            <div class="choices_info">
+                <p>Player</p>
+                <img src="" alt="" class="player_choice">
+
+                <p>Computer</p>
+                <img src="" alt="" class="computer_choice">
+
+            </div>
+
+
+            <div class="winner_container">
+                <p class="winner_player"></p>
+                <p class="winner_computer"></p>
+                <p class="tie"></p>
+            </div>
+
+            <div class="reset-container">
+                <button class="reset_game">Play Again</button>
+            </div>
         </div>
-
-        <div class="choices_info">
-            <p class="choices"></p>
-        </div>
-
-
-<div class="winner_container">
-    <p class="winner_player"></p>
-    <p class="winner_computer"></p>
-    <p class="tie"></p>
-   </div>
-
-    <div class="reset-container">
-        <button class="reset_game">Play Again</button>
     </div>
-</div>
-    </div>
-
-
-
 
     <script src="index.js"></script>
 </body>
+
+<footer>
+    <p>Copyright &copy; Pablo Garcia 2023.</p>
+</footer>
 
 </html>

@@ -22,7 +22,7 @@ function computerChoice() {
     let computer = ["rock", "paper", "scissors"];
     let random = Math.floor(Math.random() * computer.length);
     return computer[random].toLowerCase();
-}    
+}
 
 // Score object
 let score = {
@@ -34,13 +34,15 @@ let score = {
 // Visual score tracker
 function scoreCount() {
     let playerScore = document.querySelector(".score_info");
+    let scoreTitle = document.querySelector(".score_title");
+    scoreTitle.textContent = "Score";
     playerScore.textContent = `Player: ${score.playerScore} | 
     Computer: ${score.computerScore} | Tied: ${score.tie}`;
 }
 
 // Function to declare winner after 5 rounds
 function winner() {
-    const winner = document.querySelectorAll(".winner_player, .winner_computer, .tie")
+    const winner = document.querySelectorAll(".winner_player, .winner_computer, .tie");
     document.querySelector(".score_info");
     scoreCount.textContent = `Player ${score.playerScore}`;
     if (score.playerScore > score.computerScore) {
@@ -102,23 +104,48 @@ function playRound(player) {
     }
 
     const computer = computerChoice();
-    
+
     game(player, computer);
     roundCount++;
     scoreCount();
 
-    // To be replaced
-    const choices = document.querySelectorAll(".choices");
-    choices.forEach(element => {
-        element.textContent = `You chose: ${player} | Computer chose: ${computer}`;
+    // Adding visual round count
+    let counter = document.querySelector(".round_count")
+    counter.textContent = `${roundCount}`;
+
+    // Adding images based on player & computer selection
+    images = {
+        rock: "./images/rock.png",
+        paper: "./images/paper.png",
+        scissors: "./images/scissors.png"
+    }
+    const player_choice = document.querySelectorAll(".choices_info");
+    player_choice.forEach(element => {
+        if (player === "rock") {
+            let rock = element.querySelector(".player_choice");
+            rock.src = images.rock;
+        } else if (player === "paper") {
+            let paper = element.querySelector(".player_choice");
+            paper.src = images.paper;
+        } else if (player === "scissors") {
+            let scissors = element.querySelector(".player_choice");
+            scissors.src = images.scissors;
+        }
     });
 
-    // To be finished
-    // console.log(`Round ${roundCount}:`);
-    // console.log(`Player: ${player}`);
-    // console.log(`Computer: ${computer}`);
-    // console.log(`Player Score: ${score.playerScore}`);
-    // console.log(`Computer Score: ${score.computerScore}`);
+    const computer_choice = document.querySelectorAll(".choices_info");
+    computer_choice.forEach(element => {
+        if (computer === "rock") {
+            let rock = element.querySelector(".computer_choice");
+            rock.src = images.rock;
+        } else if (computer === "paper") {
+            let paper = element.querySelector(".computer_choice");
+            paper.src = images.paper;
+        } else if (computer === "scissors") {
+            let scissors = element.querySelector(".computer_choice");
+            scissors.src = images.scissors;
+        }
+    });
 
     // Stop game after 5 rounds are played
     if (roundCount === 5) {
@@ -133,9 +160,8 @@ resetGame.addEventListener("click", () => {
     reset();
 });
 
-
+// Reset the state of the function to its original values
 function reset() {
-    // Reset the state of the function to its original values
     score.playerScore = 0;
     score.computerScore = 0;
     score.tie = 0;
@@ -144,9 +170,9 @@ function reset() {
     const winner = document.querySelectorAll(".winner_player, .winner_computer, .tie, .playerScore");
     winner.forEach(element => {
         element.textContent = "";
-        const choices = document.querySelectorAll(".choices");
-    choices.forEach(element => {
-        element.textContent = "";
+        const choices = document.querySelectorAll(".player_choice , .computer_choice");
+        choices.forEach(element => {
+            element.src = "";
+        });
     });
-    });
-}
+};
