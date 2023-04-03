@@ -79,6 +79,16 @@ h1 {
     max-height: 75px;
 }
 
+@media screen and (max-width: 300px) {
+.rock img,
+.paper img,
+.scissors img {
+    margin: 0 auto;
+    max-width: 50px;
+    max-height: 50px;
+}
+}
+
 .game_info {
     margin-top: -10px;
 }
