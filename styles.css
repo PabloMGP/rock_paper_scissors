@@ -1,25 +1,120 @@
-* {
+/* * {
     border: solid 3px red;
-}
+} */
 
 body {
     margin: 0 auto;
     max-width: 1200px;
+    background-color: #155263; 
+}
+
+h1 {
+    font-size: 38px;
+}
+
+.intro_container {
+    background-color: white; 
 }
 
 .container {
-    display: flex;
     flex-direction: column;
+    height: 900px;
+    margin: 50px auto;
+    border: solid 5px;
+    background-color: #ffc93c;
+    border-radius: 8px; 
 }
 
-.intro-container {
+.intro_container {
     display: flex;
     justify-content: center;
 }
 
-.rps-container {
+.game_container {
+    margin: 200px auto;
+}
+
+.rps_container {
     display: flex;
     flex: 1;
+    margin: 20px auto;
     justify-content: center;
+    gap: 35px;
 }
 
+.rps_container .rock , .paper , .scissors {
+    border-radius: 20px;
+    border: solid;
+    background-color: #ff9a3c; 
+}
+
+.rps_container .rock:hover , .paper:hover , .scissors:hover {
+    border-radius: 90px;
+    border: solid #155263; 
+    transition-duration: 0.4s;
+}
+
+.rock img,
+.paper img,
+.scissors img {
+    margin: 0 auto;
+    max-width: 75px;
+    max-height: 75px;
+}
+
+.game_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.game_info p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.choices_info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.winner_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner_container p {
+    font-size: 18px;
+}
+
+.reset-container {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.winner_container {
+    font-size: 24px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: #155263; 
+}
+
+.reset_game {
+    font-size: 24px;
+    border-radius: 8px;
+    border: solid 2px black;
+    font-weight: bold;
+    background-color: #ff9a3c; ;
+  
+}
+
+.reset_game:hover {
+    transition-duration: 0.4s;
+    background-color: #ff6f3c; 
+    color: white; 
+}
